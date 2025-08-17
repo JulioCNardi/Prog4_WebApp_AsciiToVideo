@@ -7,13 +7,15 @@
             const restartBtn = document.getElementById('restartBtn');
             const videoUpload = document.getElementById('video-upload');
             const uploadMessage = document.querySelector('.file-upload-container p');
+            const densitySlider = document.getElementById('density-slider');
+            const densityValueSpan = document.getElementById('density-value');
             const ctx = canvas.getContext('2d', { willReadFrequently: true });
 
             // Conjunto de caracteres ASCII, do mais escuro para o mais claro
-            const asciiChars = "@#S%?*+;:. ";
+            const asciiChars = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/|()1{}[]?-_+~<>i!lI;:,\"^`'. " ;
 
-            // Define o tamanho da grade ASCII. Quanto maior o valor, mais pixelado fica.
-            const asciiDensity = 12;
+            // Define o tamanho da grade ASCII. Quanto menor o valor, maior a densidade de caracteres e o detalhe da imagem.
+            let asciiDensity = 6;
 
             // Função para converter um valor de brilho (0-255) em um caractere ASCII
             function getAsciiChar(brightness) {
@@ -36,7 +38,7 @@
                 const data = imageData.data;
 
                 // Limpa o canvas para desenhar os caracteres ASCII
-                ctx.fillStyle = '#1a202c'; // Cor de fundo do canvas
+                ctx.fillStyle = '#FFFFFF';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
                 // Configurações do texto
@@ -113,5 +115,11 @@
                         uploadMessage.textContent = "Clique em um dos botões para interagir com o vídeo.";
                     });
                 }
+            });
+
+            // Event listener para o slider de densidade
+            densitySlider.addEventListener('input', (event) => {
+                asciiDensity = parseInt(event.target.value);
+                densityValueSpan.textContent = asciiDensity;
             });
         });

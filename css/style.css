@@ -55,9 +55,10 @@ body {
             border-radius: 1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            background-color: #212529;
             width: 100%;
             max-width: 960px; /* Limita a largura para melhor visualização */
-            flex-grow: 1; /* Permite que o contêiner se expanda para preencher o espaço disponível */
+            color: white;
         }
 
         #video-container {
@@ -65,7 +66,7 @@ body {
             width: 100%;
             height: auto;
             max-width: 90vw;
-            /* Remove o max-height para evitar o corte do vídeo. A rolagem do body resolve. */
+            max-height: 90vw;
         }
 
         video {
@@ -98,7 +99,6 @@ body {
             font-weight: 600;
             border-radius: 0.5rem;
             cursor: pointer;
-            transition: background-color 0.2s, transform 0.2s;
             background-color: #2b6cb0; /* Azul escuro */
             color: #ffffff;
             border: none;
@@ -123,7 +123,6 @@ body {
             font-weight: 600;
             border-radius: 0.5rem;
             cursor: pointer;
-            transition: background-color 0.2s, transform 0.2s;
             background-color: #4CAF50; /* Verde */
             color: #ffffff;
             display: inline-block;
