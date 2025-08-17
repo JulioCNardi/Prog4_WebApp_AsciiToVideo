@@ -1,0 +1,135 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: lightgray;
+}
+
+.logo {
+    padding-top: 2em;
+    padding-left: 2em;
+    width: 5rem;
+}
+
+/* Estilo para o cabeçalho e rodapé no modo claro */
+.light-mode {
+    background-color: #fff !important;
+    color: #212529 !important;
+}
+
+/* Estilo para o conteúdo principal no modo escuro */
+.dark-mode {
+    background-color: #212529 !important;
+    color: #fff !important;
+}
+
+/* Garante que o texto dentro do header, nav, main e footer mude de cor */
+.light-mode h1,
+.light-mode h6,
+.light-mode .nav-link,
+.light-mode .dropdown-item {
+    color: #212529 !important;
+}
+
+.dark-mode p {
+    color: #fff !important;
+}
+/* Ajusta o fundo do dropdown-menu para branco no modo claro */
+.light-mode .dropdown-menu {
+    background-color: #fff !important;
+}
+/* Garante que o hover e foco dos links funcionem */
+.light-mode .nav-link.active, 
+.light-mode .nav-link:focus, 
+.light-mode .nav-link:hover,
+.light-mode .dropdown-item:hover, 
+.light-mode .dropdown-item:focus {
+    color: #212529 !important;
+}
+
+.container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Alinha o conteúdo ao topo do contêiner */
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 960px; /* Limita a largura para melhor visualização */
+            flex-grow: 1; /* Permite que o contêiner se expanda para preencher o espaço disponível */
+        }
+
+        #video-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+            max-width: 90vw;
+            /* Remove o max-height para evitar o corte do vídeo. A rolagem do body resolve. */
+        }
+
+        video {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 1rem;
+        }
+
+        #asciiCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .controls {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-self: center; /* Centraliza os botões */
+        }
+
+        .button-style {
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+            background-color: #2b6cb0; /* Azul escuro */
+            color: #ffffff;
+            border: none;
+        }
+
+        .button-style:hover {
+            background-color: #4c82c0; /* Azul mais claro ao passar o mouse */
+            transform: translateY(-2px);
+        }
+
+        .file-upload-container {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        #video-upload {
+            display: none;
+        }
+        
+        .upload-label {
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+            background-color: #4CAF50; /* Verde */
+            color: #ffffff;
+            display: inline-block;
+        }
+
+        .upload-label:hover {
+            background-color: #66BB6A;
+            transform: translateY(-2px);
+        }
