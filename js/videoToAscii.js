@@ -19,7 +19,6 @@
 
             // Função para converter um valor de brilho (0-255) em um caractere ASCII
             function getAsciiChar(brightness) {
-                // Mapeia o brilho para um índice no array de caracteres
                 const charIndex = Math.floor((brightness / 255) * (asciiChars.length - 1));
                 return asciiChars[charIndex];
             }
@@ -58,14 +57,8 @@
 
                         // Calcula o brilho usando a fórmula de luminosidade para escolher o caractere
                         const brightness = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-
-                        // Obtém o caractere ASCII correspondente
                         const asciiChar = getAsciiChar(brightness);
-                        
-                        // Define a cor do caractere com base no pixel original
                         ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
-
-                        // Desenha o caractere no canvas
                         ctx.fillText(asciiChar, x, y);
                     }
                 }
@@ -80,11 +73,10 @@
             videoUpload.addEventListener('change', (event) => {
                 const file = event.target.files[0];
                 if (file) {
-                    // Cria uma URL temporária para o arquivo de vídeo
                     const videoUrl = URL.createObjectURL(file);
                     // Define o src do elemento de vídeo
                     videoElement.src = videoUrl;
-                    videoElement.load(); // Carrega o novo vídeo
+                    videoElement.load();
                     uploadMessage.textContent = `Vídeo "${file.name}" carregado. Clique em Reproduzir!`;
                 }
             });
@@ -97,7 +89,6 @@
             // Lógica para os botões de controle
             playPauseBtn.addEventListener('click', () => {
                 if (videoElement.paused) {
-                    // Tenta reproduzir o vídeo. A chamada pode falhar sem interação prévia.
                     videoElement.play().catch(error => {
                         console.error("Erro ao tentar reproduzir o vídeo:", error);
                         uploadMessage.textContent = "Clique em um dos botões para interagir com o vídeo.";
@@ -117,7 +108,6 @@
                 }
             });
 
-            // Event listener para o slider de densidade
             densitySlider.addEventListener('input', (event) => {
                 asciiDensity = parseInt(event.target.value);
                 densityValueSpan.textContent = asciiDensity;

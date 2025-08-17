@@ -132,3 +132,7 @@ body {
             background-color: #66BB6A;
             transform: translateY(-2px);
         }
+
+.hidden {
+    display: none;
+}
